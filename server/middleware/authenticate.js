@@ -19,7 +19,7 @@ async function authenticateMiddleware(req, res, next) {
       throw new Error('Invalid token payload');
     }
 
-    if (decoded.agencyId !== req.agency.id) {
+    if (parseInt(decoded.agencyId) !== parseInt(req.agency.id)) {
       return res.status(403).json({ error: 'Forbidden', message: 'Token agency mismatch' });
     }
 
