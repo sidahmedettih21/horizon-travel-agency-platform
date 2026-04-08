@@ -1,0 +1,67 @@
+const express = require('express');
+const router = express.Router();
+const { body, param, validationResult } = require('express-validator');
+const db = require('../database/connection');
+const authorize = require('../middleware/authorize');
+const logger = require('../utils/logger');
+
+router.get('/', authorize('owner', 'staff'), async (req, res) => {
+  const agencyId = req.agency.id;
+  try {
+    const bookings = db.prepare(`SELECT * FROM bookings WHERE agency_id = ?`).all(agencyId);
+    res.json(bookings);
+  } catch (err) {
+    logger.error(`Bookings list error: ${err.message}`);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.post('/', authorize('owner', 'staff'), [
+  body('client_id').isInt(),
+  body('type').isIn(['omra', 'hajj', 'visa', 'flight', 'hotel', 'package']),
+  body('total_amount').optional().isFloat(),
+  body('notes').optional().trim()
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ error: 'Validation error', details: errors.array() });
+
+  const agencyId = req.agency.id;
+  const { client_id, staff_id, type, total_amount, currency = 'DZD', notes, travel_date, return_date } = req.body;
+
+  try {
+    const result = db.prepare(`
+      INSERT INTO bookings (agency_id, client_id, staff_id, type, total_amount, currency, notes, travel_date, return_date)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(agencyId, client_id, staff_id || null, type, total_amount, currency, notes, travel_date, return_date);
+    const newBooking = db.prepare(`SELECT * FROM bookings WHERE id = ?`).get(result.lastInsertRowid);
+    res.status(201).json(newBooking);
+  } catch (err) {
+    logger.error(`Create booking error: ${err.message}`);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.put('/:id', authorize('owner', 'staff'), [
+  param('id').isInt()
+], async (req, res) => {
+  const agencyId = req.agency.id;
+  const bookingId = req.params.id;
+  const updates = { ...req.body };
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
+
+  try {
+    const booking = db.prepare(`SELECT id FROM bookings WHERE id = ? AND agency_id = ?`).get(bookingId, agencyId);
+    if (!booking) return res.status(404).json({ error: 'Booking not found' });
+
+    const fields = Object.keys(updates).map(k => `${k} = ?`).join(', ');
+    const values = [...Object.values(updates), bookingId, agencyId];
+    db.prepare(`UPDATE bookings SET ${fields}, updated_at = CURRENT_TIMESTAMP WHERE id = ? AND agency_id = ?`).run(...values);
+    const updated = db.prepare(`SELECT * FROM bookings WHERE id = ?`).get(bookingId);
+    res.json(updated);
+  } catch (err) {
+    logger.error(`Update booking error: ${err.message}`);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+module.exports = router;
