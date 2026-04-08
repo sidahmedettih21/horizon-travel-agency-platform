@@ -46,7 +46,10 @@ router.put('/:id', authorize('owner', 'staff'), [
 ], async (req, res) => {
   const agencyId = req.agency.id;
   const bookingId = req.params.id;
-  const updates = { ...req.body };
+  const allowed = ["status","notes","total_amount","travel_date","return_date","staff_id"];
+  const updates = {};
+  allowed.forEach(f => { if (req.body[f] !== undefined) updates[f] = req.body[f]; });
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: "No fields to update" });
   if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
 
   try {
