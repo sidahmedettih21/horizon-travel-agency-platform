@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installment Simulator | Anouar El Sabah</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .simulator-container { max-width: 1000px; margin: 100px auto; padding: 2rem; background: var(--off-white); border-radius: var(--r-xl); }
+    .contributor-card { background: white; padding: 1rem; border-radius: var(--r-md); margin-bottom: 1rem; border: 1px solid var(--border-2); }
+    .result-badge { display: inline-block; padding: 0.3rem 1rem; border-radius: 20px; font-weight: 700; }
+    .approved { background: #10b981; color: white; }
+    .rejected { background: #ef4444; color: white; }
+    .distribution-table { width: 100%; border-collapse: collapse; }
+    .distribution-table td { padding: 0.5rem; border-bottom: 1px solid var(--border-2); }
+  </style>
+</head>
+<body>
+  <div class="simulator-container">
+    <h2 style="font-family: 'Playfair Display'; color: var(--gold-d);">📊 Umrah/Hajj Installment Simulator</h2>
+    <p>Check eligibility for a 10‑month payment plan. All calculations follow official banking guidelines.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <!-- Left Column: Input -->
+      <div>
+        <h3>Package Details</h3>
+        <div class="f-group">
+          <label>Package Price (DZD)</label>
+          <input type="number" id="packagePrice" class="f-ctrl" value="45000000" step="1000" min="0">
+        </div>
+        <div class="f-group">
+          <label>Down Payment (DZD)</label>
+          <input type="number" id="downPayment" class="f-ctrl" value="15000000" step="1000" min="0">
+        </div>
+        <div class="f-group">
+          <label>Number of Months</label>
+          <input type="number" id="months" class="f-ctrl" value="10" min="1" max="24">
+        </div>
+
+        <h3 style="margin-top: 2rem;">Contributors</h3>
+        <div id="contributorsList"></div>
+        <button class="btn btn-outline btn-sm" onclick="addContributor()"><i class="fas fa-plus"></i> Add Contributor</button>
+
+        <button class="btn btn-gold btn-lg" style="margin-top: 2rem; width: 100%;" onclick="calculate()">
+          <i class="fas fa-calculator"></i> Check Eligibility
+        </button>
+      </div>
+
+      <!-- Right Column: Results -->
+      <div id="resultsPanel" style="background: white; padding: 1.5rem; border-radius: var(--r-lg);">
+        <h3>Results</h3>
+        <div id="resultsContent">Enter details and click "Check Eligibility".</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/horizon-api.js"></script>
+  <script>
+    const API_BASE = 'http://localhost:3001'; // Change in production
+
+    let contributorCounter = 1;
+
+    function addContributor(name = '', salary = '') {
+      const container = document.getElementById('contributorsList');
+      const div = document.createElement('div');
+      div.className = 'contributor-card';
+      div.innerHTML = `
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <input type="text" placeholder="Name" class="f-ctrl" id="name${contributorCounter}" value="${name}" style="flex:2">
+          <input type="number" placeholder="Monthly Salary (DZD)" class="f-ctrl" id="salary${contributorCounter}" value="${salary}" min="0" step="1000" style="flex:3">
+          <button class="btn-ghost" style="color:red;" onclick="this.parentElement.parentElement.remove()"><i class="fas fa-trash"></i></button>
+        </div>
+      `;
+      container.appendChild(div);
+      contributorCounter++;
+    }
+
+    // Initialize with one default contributor
+    addContributor('Ahmed', '8500000');
+
+    function getContributors() {
+      const contributors = [];
+      for (let i = 0; i < contributorCounter; i++) {
+        const nameInput = document.getElementById(`name${i}`);
+        const salaryInput = document.getElementById(`salary${i}`);
+        if (nameInput && salaryInput) {
+          const name = nameInput.value.trim();
+          const salary = parseFloat(salaryInput.value);
+          if (name && !isNaN(salary) && salary >= 0) {
+            contributors.push({ name, salary });
+          }
+        }
+      }
+      return contributors;
+    }
+
+    async function calculate() {
+      const packagePrice = parseFloat(document.getElementById('packagePrice').value);
+      const downPayment = parseFloat(document.getElementById('downPayment').value);
+      const months = parseInt(document.getElementById('months').value);
+      const contributors = getContributors();
+
+      if (!packagePrice || packagePrice <= 0) {
+        alert('Please enter a valid package price');
+        return;
+      }
+      if (contributors.length === 0) {
+        alert('Add at least one contributor');
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/installments/check-eligibility`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ packagePrice, downPayment, months, contributors })
+        });
+        const data = await res.json();
+
+        const resultsDiv = document.getElementById('resultsContent');
+        const statusClass = data.approved ? 'approved' : 'rejected';
+        const statusText = data.approved ? 'APPROVED' : 'REJECTED';
+
+        let distributionsHtml = '';
+        data.distributions.forEach(d => {
+          distributionsHtml += `<tr><td>${d.name}</td><td>${d.amount.toLocaleString()} DZD</td></tr>`;
+        });
+
+        resultsDiv.innerHTML = `
+          <div style="margin-bottom: 1.5rem;">
+            <span class="result-badge ${statusClass}">${statusText}</span>
+          </div>
+          <p><strong>Required Monthly Payment:</strong> ${data.requiredMonthly.toLocaleString()} DZD</p>
+          <p><strong>Monthly Distribution:</strong></p>
+          <table class="distribution-table">
+            ${distributionsHtml}
+          </table>
+          ${data.remainingShortfall > 0 ? `<p style="color: #dc2626;">Shortfall: ${data.remainingShortfall.toLocaleString()} DZD/month</p>` : ''}
+          <p><strong>Maximum per contributor (30% of salary):</strong></p>
+          <ul>
+            ${data.maxMonthlyPerContributor.map(c => `<li>${c.name}: up to ${c.max.toLocaleString()} DZD/month</li>`).join('')}
+          </ul>
+          ${!data.approved ? `<p style="margin-top: 1rem; background: #fef3c7; padding: 0.75rem; border-radius: 8px;">
+            <strong>Minimum down payment required for approval:</strong> ${data.minDownPayment.toLocaleString()} DZD
+          </p>` : ''}
+        `;
+      } catch (err) {
+        document.getElementById('resultsContent').innerHTML = `<p style="color: red;">Error: ${err.message}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

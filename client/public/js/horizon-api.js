@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  const API_BASE = 'http://localhost:3000'; // Change to https://api.horizon.com in prod
+  const API_BASE = 'http://localhost:3001'; // Must match Horizon server// Change to https://api.horizon.com in prod
   const AGENCY_ID = 1; // Anouar = demo agency
 
   async function apiCall(endpoint, options = {}) {
-    const headers = { 'Content-Type': 'application/json', ...options.headers };
+    const headers =     { 'Content-Type': 'application/json', ...options.headers };
     const res = await fetch(`${API_BASE}${endpoint}`, {
       credentials: 'include',
       headers,

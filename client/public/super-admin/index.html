@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Horizon Super Admin</title>
+  <style>
+    body { font-family: system-ui; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    table { width: 100%; border-collapse: collapse; background: #1e293b; }
+    th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #334155; }
+    button { background: #3b82f6; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Horizon Super Admin</h1>
+  <div id="loginPanel">
+    <input type="email" id="email" placeholder="Email" value="super@horizon.dz">
+    <input type="password" id="password" placeholder="Password" value="super123">
+    <button onclick="login()">Login</button>
+  </div>
+  <div id="dashboard" style="display:none;">
+    <h2>Agencies</h2>
+    <table id="agenciesTable"></table>
+  </div>
+  <script>
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const res = await fetch('/api/v1/super/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password })
+      });
+      if (res.ok) {
+        document.getElementById('loginPanel').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        loadAgencies();
+      }
+    }
+    async function loadAgencies() {
+      const res = await fetch('/api/v1/super/agencies', { credentials: 'include' });
+      const agencies = await res.json();
+      const html = agencies.map(a => `
+        <tr>
+          <td>${a.name}</td>
+          <td>${a.subdomain}</td>
+          <td>${a.tier}</td>
+          <td><button onclick="toggleFeature(${a.id}, 'multi_owner_view')">Toggle Multi-Owner</button></td>
+        </tr>
+      `).join('');
+      document.getElementById('agenciesTable').innerHTML = `
+        <tr><th>Name</th><th>Subdomain</th><th>Tier</th><th>Actions</th></tr>
+        ${html}
+      `;
+    }
+    async function toggleFeature(agencyId, feature) {
+      await fetch(`/api/v1/super/agencies/${agencyId}/features`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ feature, enabled: true })
+      });
+      loadAgencies();
+    }
+  </script>
+</body>
+</html>

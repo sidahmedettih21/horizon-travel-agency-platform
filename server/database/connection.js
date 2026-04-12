@@ -19,8 +19,7 @@ const migrationFiles = fs.readdirSync(path.join(__dirname, 'migrations'))
   .sort();
 for (const file of migrationFiles) {
   const migration = fs.readFileSync(path.join(__dirname, 'migrations', file), 'utf8');
-  db.exec(migration);
-  console.log(`✓ Migration ${file} applied`);
+  try { db.exec(migration); console.log('✓ Migration ' + file + ' applied'); } catch(e) { if (e.message.includes('duplicate column') || e.message.includes('already exists')) { console.log('⚠️  Skipping duplicate in ' + file); } else { throw e; } }
 }
 
 db.getAsync = (sql, params = []) => {
