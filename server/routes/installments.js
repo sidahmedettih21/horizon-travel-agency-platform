@@ -84,4 +84,4 @@ router.post('/max-affordable', (req, res) => {
     maxMonthlyTotal: totalMaxMonthly,
     monthlyPerContributor: contributors.map(c => ({ name: c.name, max: c.salary * 0.3 }))
   });
-});
+});module.exports = router;
