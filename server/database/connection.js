@@ -14,11 +14,13 @@ db.pragma('journal_mode = WAL');
 db.pragma('synchronous = NORMAL');
 db.pragma('mmap_size = 268435456');
 
-const migrationPath = path.join(__dirname, 'migrations', '001_schema.sql');
-if (fs.existsSync(migrationPath)) {
-  const migration = fs.readFileSync(migrationPath, 'utf8');
+const migrationFiles = fs.readdirSync(path.join(__dirname, 'migrations'))
+  .filter(f => f.endsWith('.sql'))
+  .sort();
+for (const file of migrationFiles) {
+  const migration = fs.readFileSync(path.join(__dirname, 'migrations', file), 'utf8');
   db.exec(migration);
-  console.log('✓ Database migrations applied');
+  console.log(`✓ Migration ${file} applied`);
 }
 
 db.getAsync = (sql, params = []) => {

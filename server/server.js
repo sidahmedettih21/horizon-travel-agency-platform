@@ -26,8 +26,28 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const isProd = process.env.NODE_ENV === 'production';
 
-app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
-app.use(cors({ origin: false, credentials: true }));
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5500',
+  'http://127.0.0.1:5500',
+  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'https://anouarelsabah.com'  // Add production domain later
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-CSRF-Token']
+}));
 app.use(compression());
 app.use(express.json({ limit: '50kb' }));
 app.use(express.urlencoded({ extended: true, limit: '50kb' }));
@@ -48,11 +68,18 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Tenant middleware must come before any agency-scoped routes
 app.use(tenantMiddleware);
 
+// Auth routes (public)
 const authRoutes = require('./routes/auth');
 app.use('/api/v1/auth', authRoutes);
 
+// Public content routes (no auth required for GET)
+const contentRoutes = require('./routes/content');
+app.use('/api/content', contentRoutes);
+
+// ========== ALL ROUTES BELOW REQUIRE AUTHENTICATION ==========
 app.use(authenticateMiddleware);
 
 const leadsRoutes = require('./routes/leads');
@@ -73,10 +100,12 @@ app.use('/api/v1/agency', agencyRoutes);
 app.use('/api/v1/notifications', notificationsRoutes);
 app.use('/api/v1/reminders', remindersRoutes);
 
+// Catch-all for SPA (client frontend)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 
+// Global error handler
 app.use((err, req, res, next) => {
   logger.error(err.stack);
   const status = err.status || 500;

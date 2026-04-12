@@ -4,6 +4,7 @@ const { body, query, param, validationResult } = require('express-validator');
 const db = require('../database/connection');
 const authorize = require('../middleware/authorize');
 const logger = require('../utils/logger');
+const { sendWhatsAppMessage, formatLeadMessage } = require('../utils/whatsapp');
 
 router.get('/', authorize('owner', 'staff'), [
   query('status').optional().isIn(['pending', 'contacted', 'qualified', 'converted', 'lost']),
@@ -56,6 +57,21 @@ router.post('/', authorize('owner', 'staff'), [
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `).run(agencyId, name, phone, email, service_interest, status, notes, source);
     const newLead = db.prepare(`SELECT * FROM leads WHERE id = ?`).get(result.lastInsertRowid);
+
+    // WhatsApp notification (owner only for pilot)
+    const agency = req.agency;
+    const agencySettings = JSON.parse(agency.settings || '{}');
+    let ownerPhone = agencySettings.owner_whatsapp;
+    if (!ownerPhone) {
+      const ownerUser = db.prepare(`SELECT phone FROM users WHERE agency_id = ? AND role = 'owner' LIMIT 1`).get(agencyId);
+      ownerPhone = ownerUser?.phone;
+    }
+    if (ownerPhone && agencySettings.whatsapp_enabled !== false) {
+      const leadUrl = `${process.env.BASE_URL || 'http://localhost:3000'}/leads/${result.lastInsertRowid}`;
+      const message = formatLeadMessage(newLead, agency, leadUrl);
+      sendWhatsAppMessage(ownerPhone, message, agencyId).catch(e => logger.error(`WhatsApp error: ${e.message}`));
+    }
+
     res.status(201).json(newLead);
   } catch (err) {
     logger.error(`Create lead error: ${err.message}`);

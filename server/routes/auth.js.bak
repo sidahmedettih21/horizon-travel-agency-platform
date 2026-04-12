@@ -5,7 +5,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const db = require('../database/connection');
-const authenticate = require('../middleware/authenticate');
 const logger = require('../utils/logger');
 
 const authLimiter = rateLimit({
@@ -89,7 +88,4 @@ router.post('/logout', (req, res) => {
   res.json({ message: 'Logged out' });
 });
 
-router.get('/me', authenticate, (req, res) => {
-  res.json({ user: req.user });
-});
 module.exports = router;
