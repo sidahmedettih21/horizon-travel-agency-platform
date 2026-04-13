@@ -452,3 +452,15 @@
 {"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 182.872 ms - 83\u001b[0m","timestamp":"2026-04-13T14:09:22.714Z"}
 {"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[32m200\u001b[0m 6.932 ms - 2\u001b[0m","timestamp":"2026-04-13T14:09:30.291Z"}
 {"level":"info","message":"\u001b[0mGET /api/content/admin/gallery \u001b[32m200\u001b[0m 8.159 ms - 2\u001b[0m","timestamp":"2026-04-13T14:09:30.858Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.952 ms - 421\u001b[0m","timestamp":"2026-04-13T14:24:37.359Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 4.096 ms - 421\u001b[0m","timestamp":"2026-04-13T14:24:37.373Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[32m200\u001b[0m 3.539 ms - 2\u001b[0m","timestamp":"2026-04-13T14:24:37.384Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[32m200\u001b[0m 5.551 ms - 2\u001b[0m","timestamp":"2026-04-13T14:24:37.394Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 169.336 ms - 83\u001b[0m","timestamp":"2026-04-13T14:24:42.370Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[36m304\u001b[0m 5.684 ms - -\u001b[0m","timestamp":"2026-04-13T14:26:14.773Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[36m304\u001b[0m 12.915 ms - -\u001b[0m","timestamp":"2026-04-13T14:26:58.107Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[36m304\u001b[0m 1.869 ms - -\u001b[0m","timestamp":"2026-04-13T14:27:05.401Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 3.522 ms - 54\u001b[0m","timestamp":"2026-04-13T14:27:13.847Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 1.346 ms - 54\u001b[0m","timestamp":"2026-04-13T15:06:44.757Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 106.348 ms - 83\u001b[0m","timestamp":"2026-04-13T15:07:11.152Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 3.751 ms - 476\u001b[0m","timestamp":"2026-04-13T15:10:13.460Z"}
