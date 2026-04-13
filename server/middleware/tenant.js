@@ -40,4 +40,3 @@ function tenantMiddleware(req, res, next) {
 }
 
 module.exports = tenantMiddleware;
-module.exports = tenantMiddleware;

@@ -65,36 +65,36 @@ router.get('/staff', authorize('owner'), (req, res) => {
   res.json(staff);
 });
 
+router.put('/', authorize('owner'), [
+  body('primary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
+  body('secondary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
+  body('logo_url').optional().isURL(),
+  body('font_family').optional().trim()
+], async (req, res) => {
+  const updates = {};
+  if (req.body.primary_color) updates.primary_color = req.body.primary_color;
+  if (req.body.secondary_color) updates.secondary_color = req.body.secondary_color;
+  if (req.body.logo_url) updates.logo_url = req.body.logo_url;
+  if (req.body.font_family) updates.font_family = req.body.font_family;
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
+  const fields = Object.keys(updates).map(k => `${k} = ?`).join(', ');
+  db.prepare(`UPDATE agencies SET ${fields}, updated_at = CURRENT_TIMESTAMP WHERE id = ?`).run(...Object.values(updates), req.agency.id);
+  res.json({ message: 'Branding updated' });
+});
+router.put('/', authorize('owner'), [
+  body('primary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
+  body('secondary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
+  body('logo_url').optional().isURL(),
+  body('font_family').optional().trim()
+], async (req, res) => {
+  const updates = {};
+  if (req.body.primary_color) updates.primary_color = req.body.primary_color;
+  if (req.body.secondary_color) updates.secondary_color = req.body.secondary_color;
+  if (req.body.logo_url) updates.logo_url = req.body.logo_url;
+  if (req.body.font_family) updates.font_family = req.body.font_family;
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
+  const fields = Object.keys(updates).map(k => `${k} = ?`).join(', ');
+  db.prepare(`UPDATE agencies SET ${fields}, updated_at = CURRENT_TIMESTAMP WHERE id = ?`).run(...Object.values(updates), req.agency.id);
+  res.json({ message: 'Branding updated' });
+});
 module.exports = router;
-router.put('/', authorize('owner'), [
-  body('primary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
-  body('secondary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
-  body('logo_url').optional().isURL(),
-  body('font_family').optional().trim()
-], async (req, res) => {
-  const updates = {};
-  if (req.body.primary_color) updates.primary_color = req.body.primary_color;
-  if (req.body.secondary_color) updates.secondary_color = req.body.secondary_color;
-  if (req.body.logo_url) updates.logo_url = req.body.logo_url;
-  if (req.body.font_family) updates.font_family = req.body.font_family;
-  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
-  const fields = Object.keys(updates).map(k => `${k} = ?`).join(', ');
-  db.prepare(`UPDATE agencies SET ${fields}, updated_at = CURRENT_TIMESTAMP WHERE id = ?`).run(...Object.values(updates), req.agency.id);
-  res.json({ message: 'Branding updated' });
-});
-router.put('/', authorize('owner'), [
-  body('primary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
-  body('secondary_color').optional().matches(/^#[0-9A-Fa-f]{6}$/),
-  body('logo_url').optional().isURL(),
-  body('font_family').optional().trim()
-], async (req, res) => {
-  const updates = {};
-  if (req.body.primary_color) updates.primary_color = req.body.primary_color;
-  if (req.body.secondary_color) updates.secondary_color = req.body.secondary_color;
-  if (req.body.logo_url) updates.logo_url = req.body.logo_url;
-  if (req.body.font_family) updates.font_family = req.body.font_family;
-  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No fields to update' });
-  const fields = Object.keys(updates).map(k => `${k} = ?`).join(', ');
-  db.prepare(`UPDATE agencies SET ${fields}, updated_at = CURRENT_TIMESTAMP WHERE id = ?`).run(...Object.values(updates), req.agency.id);
-  res.json({ message: 'Branding updated' });
-});

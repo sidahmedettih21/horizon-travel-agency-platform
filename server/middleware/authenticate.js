@@ -37,4 +37,3 @@ async function authenticateMiddleware(req, res, next) {
 }
 
 module.exports = authenticateMiddleware;
-module.exports = authenticateMiddleware;

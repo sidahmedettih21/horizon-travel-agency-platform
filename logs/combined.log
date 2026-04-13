@@ -1,0 +1,296 @@
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-07T13:56:47.503Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 18.863 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:39.585Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 3.508 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:39.697Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 0.906 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:46.316Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 1.476 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:46.345Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 3.218 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:46.517Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 2.766 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:46.559Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 1.026 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:56.882Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 1.384 ms - 54\u001b[0m","timestamp":"2026-04-07T13:58:56.911Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:41.998Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:43.317Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:44.310Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:44.662Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:44.852Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-07T13:59:50.398Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-08T09:19:46.423Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 17.927 ms - 54\u001b[0m","timestamp":"2026-04-08T09:19:59.917Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 3.958 ms - 54\u001b[0m","timestamp":"2026-04-08T09:20:00.011Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 11.043 ms - 54\u001b[0m","timestamp":"2026-04-08T09:23:06.880Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 1.471 ms - 54\u001b[0m","timestamp":"2026-04-08T09:23:07.015Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T09:23:58.631Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T09:23:59.235Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T09:23:59.584Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T09:24:12.711Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-08T09:26:45.124Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 7.735 ms - 54\u001b[0m","timestamp":"2026-04-08T09:26:53.435Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 424.572 ms - 81\u001b[0m","timestamp":"2026-04-08T09:26:53.894Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/leads \u001b[32m200\u001b[0m 5.521 ms - 58\u001b[0m","timestamp":"2026-04-08T09:29:43.663Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/leads \u001b[32m201\u001b[0m 5.952 ms - 292\u001b[0m","timestamp":"2026-04-08T09:29:43.681Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/clients \u001b[32m200\u001b[0m 2.127 ms - 2\u001b[0m","timestamp":"2026-04-08T09:29:43.695Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/clients \u001b[32m201\u001b[0m 4.446 ms - 261\u001b[0m","timestamp":"2026-04-08T09:29:43.711Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transactions/summary \u001b[32m200\u001b[0m 2.203 ms - 42\u001b[0m","timestamp":"2026-04-08T09:29:43.725Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 9.477 ms - 54\u001b[0m","timestamp":"2026-04-08T09:41:58.863Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 2.992 ms - 54\u001b[0m","timestamp":"2026-04-08T09:41:59.011Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T09:43:28.546Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-08T09:45:35.739Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 13.418 ms - 54\u001b[0m","timestamp":"2026-04-08T09:45:41.070Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 447.027 ms - 81\u001b[0m","timestamp":"2026-04-08T09:45:41.540Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/leads \u001b[32m200\u001b[0m 5.331 ms - 350\u001b[0m","timestamp":"2026-04-08T09:45:41.557Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/leads \u001b[32m201\u001b[0m 5.555 ms - 299\u001b[0m","timestamp":"2026-04-08T09:45:41.575Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/clients \u001b[32m200\u001b[0m 3.293 ms - 275\u001b[0m","timestamp":"2026-04-08T09:45:41.591Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/clients \u001b[32m201\u001b[0m 4.419 ms - 270\u001b[0m","timestamp":"2026-04-08T09:45:41.607Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/bookings \u001b[32m201\u001b[0m 3.475 ms - 287\u001b[0m","timestamp":"2026-04-08T09:45:41.623Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/bookings \u001b[32m200\u001b[0m 2.247 ms - 289\u001b[0m","timestamp":"2026-04-08T09:45:41.637Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/transactions \u001b[32m201\u001b[0m 2.913 ms - 8\u001b[0m","timestamp":"2026-04-08T09:45:41.653Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transactions/summary \u001b[32m200\u001b[0m 2.466 ms - 41\u001b[0m","timestamp":"2026-04-08T09:45:41.668Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/attendance/qr \u001b[32m200\u001b[0m 76.121 ms - 3028\u001b[0m","timestamp":"2026-04-08T09:45:41.755Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/agency/staff \u001b[32m200\u001b[0m 2.449 ms - 2\u001b[0m","timestamp":"2026-04-08T09:45:41.771Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/agency/staff \u001b[32m201\u001b[0m 385.171 ms - 237\u001b[0m","timestamp":"2026-04-08T09:45:42.170Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/logout \u001b[32m200\u001b[0m 1.310 ms - 24\u001b[0m","timestamp":"2026-04-08T09:45:42.184Z"}
+{"level":"info","message":"SIGTERM received, closing server...","timestamp":"2026-04-08T09:46:40.786Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-08T09:46:41.419Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 12.870 ms - 54\u001b[0m","timestamp":"2026-04-08T09:47:21.005Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 2.498 ms - 54\u001b[0m","timestamp":"2026-04-08T09:47:21.082Z"}
+{"level":"info","message":"SIGTERM received, closing server...","timestamp":"2026-04-08T12:05:40.410Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-08T12:08:01.397Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 34.195 ms - 54\u001b[0m","timestamp":"2026-04-08T12:08:33.349Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 3.779 ms - 54\u001b[0m","timestamp":"2026-04-08T12:08:33.441Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-08T13:02:55.013Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:16:50.204Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T13:18:18.804Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:22:07.830Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T13:22:14.611Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:27:32.792Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[33m401\u001b[0m 22.031 ms - 54\u001b[0m","timestamp":"2026-04-12T13:27:53.363Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T13:34:02.485Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:34:32.669Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 6.294 ms - 54\u001b[0m","timestamp":"2026-04-12T13:35:49.251Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.754 ms - 2\u001b[0m","timestamp":"2026-04-12T13:36:46.535Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.933 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:58.519Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.231 ms - 2\u001b[0m","timestamp":"2026-04-12T13:51:58.533Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 0.727 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:58.548Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 10.345 ms - 31\u001b[0m","timestamp":"2026-04-12T13:51:58.569Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[33m401\u001b[0m 1.144 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:58.586Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 0.695 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:58.600Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.375 ms - 2\u001b[0m","timestamp":"2026-04-12T13:51:59.622Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.665 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.637Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.799 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.650Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 2.681 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.663Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.501 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.673Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.668 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.685Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.529 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.697Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.876 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.708Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.763 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.721Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.833 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.734Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.485 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.746Z"}
+{"level":"info","message":"\u001b[0mOPTIONS /health \u001b[33m401\u001b[0m 0.785 ms - 54\u001b[0m","timestamp":"2026-04-12T13:51:59.756Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T13:54:33.787Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:54:52.923Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 160.899 ms - 83\u001b[0m","timestamp":"2026-04-12T13:54:57.686Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T13:58:24.607Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T13:58:30.183Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 145.619 ms - 83\u001b[0m","timestamp":"2026-04-12T13:58:34.526Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 2.967 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:25.813Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.653 ms - 2\u001b[0m","timestamp":"2026-04-12T14:02:25.824Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 1.191 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:25.840Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 107.465 ms - 83\u001b[0m","timestamp":"2026-04-12T14:02:25.959Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T14:02:25.984Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[33m404\u001b[0m 8.398 ms - 167\u001b[0m","timestamp":"2026-04-12T14:02:25.985Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[31m500\u001b[0m 4.075 ms - 64\u001b[0m","timestamp":"2026-04-12T14:02:26.007Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.271 ms - 2\u001b[0m","timestamp":"2026-04-12T14:02:27.029Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.774 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.043Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.779 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.055Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.889 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.065Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.543 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.077Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.684 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.090Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.532 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.103Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.859 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.113Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.582 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.125Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.579 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.137Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.841 ms - 54\u001b[0m","timestamp":"2026-04-12T14:02:27.147Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.524 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:26.330Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.153 ms - 2\u001b[0m","timestamp":"2026-04-12T14:03:26.345Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 0.707 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:26.358Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 120.562 ms - 83\u001b[0m","timestamp":"2026-04-12T14:03:26.490Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T14:03:26.512Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[33m404\u001b[0m 4.537 ms - 167\u001b[0m","timestamp":"2026-04-12T14:03:26.513Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[31m500\u001b[0m 2.889 ms - 64\u001b[0m","timestamp":"2026-04-12T14:03:26.529Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.224 ms - 2\u001b[0m","timestamp":"2026-04-12T14:03:27.548Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.498 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.563Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.660 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.576Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.677 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.587Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.424 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.598Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.544 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.610Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.923 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.623Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.609 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.632Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.580 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.644Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 2.251 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.656Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.560 ms - 54\u001b[0m","timestamp":"2026-04-12T14:03:27.666Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[33m401\u001b[0m 0.730 ms - 54\u001b[0m","timestamp":"2026-04-12T14:04:35.529Z"}
+{"level":"info","message":"SIGTERM received, closing server...","timestamp":"2026-04-12T14:08:06.541Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T14:08:07.495Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 6.421 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:30.705Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.272 ms - 2\u001b[0m","timestamp":"2026-04-12T14:08:30.716Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 1.338 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:30.740Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 146.478 ms - 83\u001b[0m","timestamp":"2026-04-12T14:08:30.900Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[32m200\u001b[0m 4.080 ms - 79\u001b[0m","timestamp":"2026-04-12T14:08:30.918Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 3.676 ms - 228\u001b[0m","timestamp":"2026-04-12T14:08:30.935Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.307 ms - 160\u001b[0m","timestamp":"2026-04-12T14:08:31.960Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/2b4bce6b96d875682443589681ae0e1c \u001b[32m200\u001b[0m 2.304 ms - 16\u001b[0m","timestamp":"2026-04-12T14:08:31.976Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.676 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:31.990Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.951 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.003Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.935 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.013Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.751 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.025Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.986 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.039Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.662 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.049Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.601 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.060Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.712 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.072Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.400 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.083Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.785 ms - 54\u001b[0m","timestamp":"2026-04-12T14:08:32.094Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T14:10:10.757Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T14:18:47.168Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 7.183 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:09.083Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.054 ms - 2\u001b[0m","timestamp":"2026-04-12T14:19:09.097Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[33m401\u001b[0m 1.410 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:09.118Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 143.481 ms - 83\u001b[0m","timestamp":"2026-04-12T14:19:09.273Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[32m200\u001b[0m 4.095 ms - 79\u001b[0m","timestamp":"2026-04-12T14:19:09.291Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 3.530 ms - 228\u001b[0m","timestamp":"2026-04-12T14:19:09.311Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.205 ms - 160\u001b[0m","timestamp":"2026-04-12T14:19:10.336Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/47af46801bac02dc6cdd9ba19863f1e0 \u001b[32m200\u001b[0m 2.281 ms - 16\u001b[0m","timestamp":"2026-04-12T14:19:10.352Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.617 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.367Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.657 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.379Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.162 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.390Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.669 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.402Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.553 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.416Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.528 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.428Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.602 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.437Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.668 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.449Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.590 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.461Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.862 ms - 54\u001b[0m","timestamp":"2026-04-12T14:19:10.471Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.226 ms - 2\u001b[0m","timestamp":"2026-04-12T14:19:15.164Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 136.844 ms - 83\u001b[0m","timestamp":"2026-04-12T14:19:21.358Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 7.382 ms - 315\u001b[0m","timestamp":"2026-04-12T14:19:26.262Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 5.394 ms - 247\u001b[0m","timestamp":"2026-04-12T14:19:31.183Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/2b90a273a2f56de18e068746014a8f4b \u001b[32m200\u001b[0m 3.658 ms - 16\u001b[0m","timestamp":"2026-04-12T14:22:00.066Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.328 ms - 2\u001b[0m","timestamp":"2026-04-12T14:22:06.012Z"}
+{"level":"info","message":"\u001b[0mGET /api-test.html \u001b[32m200\u001b[0m 5.419 ms - -\u001b[0m","timestamp":"2026-04-12T14:22:18.879Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m401\u001b[0m 1.467 ms - 54\u001b[0m","timestamp":"2026-04-12T14:22:18.960Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 6.187 ms - 2\u001b[0m","timestamp":"2026-04-12T14:22:29.260Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 153.036 ms - 83\u001b[0m","timestamp":"2026-04-12T14:22:30.656Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 16.566 ms - 229\u001b[0m","timestamp":"2026-04-12T14:22:31.166Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T14:22:37.887Z"}
+{"level":"info","message":"\u001b[0mGET /.well-known/appspecific/com.chrome.devtools.json \u001b[33m404\u001b[0m 7.909 ms - 167\u001b[0m","timestamp":"2026-04-12T14:22:37.890Z"}
+{"level":"info","message":"\u001b[0mGET /api-test.html \u001b[32m200\u001b[0m 1.932 ms - -\u001b[0m","timestamp":"2026-04-12T14:23:14.636Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T14:23:14.697Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 11.408 ms - 167\u001b[0m","timestamp":"2026-04-12T14:23:14.699Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 6.195 ms - 161\u001b[0m","timestamp":"2026-04-12T14:23:16.016Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 177.233 ms - 83\u001b[0m","timestamp":"2026-04-12T14:23:16.670Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 14.949 ms - 235\u001b[0m","timestamp":"2026-04-12T14:23:17.102Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/fb8765039fbc7e49efb1bfe2689b6943 \u001b[32m200\u001b[0m 14.227 ms - 16\u001b[0m","timestamp":"2026-04-12T14:23:17.657Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T14:23:20.877Z"}
+{"level":"info","message":"\u001b[0mGET /.well-known/appspecific/com.chrome.devtools.json \u001b[33m404\u001b[0m 5.673 ms - 167\u001b[0m","timestamp":"2026-04-12T14:23:20.880Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 104.153 ms - 83\u001b[0m","timestamp":"2026-04-12T14:42:23.796Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 106.464 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:23.919Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.546 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:23.935Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[33m401\u001b[0m 0.896 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:23.950Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/auth/me \u001b[32m200\u001b[0m 1.891 ms - 79\u001b[0m","timestamp":"2026-04-12T14:42:23.964Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 16.238 ms - 188\u001b[0m","timestamp":"2026-04-12T14:42:23.994Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 2.231 ms - 236\u001b[0m","timestamp":"2026-04-12T14:42:24.005Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 1.048 ms - 447\u001b[0m","timestamp":"2026-04-12T14:42:25.028Z"}
+{"level":"info","message":"\u001b[0mPUT /api/content/admin/offer/70922fd4594c234730956351ecb9a90c \u001b[32m200\u001b[0m 2.209 ms - 233\u001b[0m","timestamp":"2026-04-12T14:42:25.044Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/70922fd4594c234730956351ecb9a90c \u001b[32m200\u001b[0m 1.821 ms - 16\u001b[0m","timestamp":"2026-04-12T14:42:25.059Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.905 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.075Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.416 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.088Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 3.252 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.102Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.303 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.112Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.316 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.125Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.282 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.138Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.903 ms - 31\u001b[0m","timestamp":"2026-04-12T14:42:25.152Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 1.084 ms - 42\u001b[0m","timestamp":"2026-04-12T14:42:25.162Z"}
+{"level":"info","message":"\u001b[0mHEAD /health \u001b[32m200\u001b[0m 0.434 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:25.173Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.632 ms - 42\u001b[0m","timestamp":"2026-04-12T14:42:25.188Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 4.260 ms - 240\u001b[0m","timestamp":"2026-04-12T14:42:25.202Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 2.845 ms - 451\u001b[0m","timestamp":"2026-04-12T14:42:25.220Z"}
+{"level":"info","message":"\u001b[0mDELETE /api/content/admin/offer/ca806fd0b1819f2cee6c4e740bc4ef59 \u001b[32m200\u001b[0m 5.007 ms - 16\u001b[0m","timestamp":"2026-04-12T14:42:25.235Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/2/offer \u001b[32m200\u001b[0m 1.004 ms - 2\u001b[0m","timestamp":"2026-04-12T14:42:25.246Z"}
+{"level":"info","message":"\u001b[0mPOST /api/content/admin/offer \u001b[32m201\u001b[0m 2.008 ms - 210\u001b[0m","timestamp":"2026-04-12T14:42:25.260Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/2/offer \u001b[32m200\u001b[0m 0.934 ms - 2\u001b[0m","timestamp":"2026-04-12T14:42:26.276Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[32m200\u001b[0m 0.931 ms - 2\u001b[0m","timestamp":"2026-04-12T14:42:26.290Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.510 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:26.319Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.442 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:26.336Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.478 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:26.351Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 2.042 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:26.367Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 0.562 ms - 54\u001b[0m","timestamp":"2026-04-12T14:42:26.380Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T15:05:41.213Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T15:44:24.963Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T17:03:50.868Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:03:55.390Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 28.919 ms - 167\u001b[0m","timestamp":"2026-04-12T17:03:55.403Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:03:55.491Z"}
+{"level":"info","message":"\u001b[0mGET /.well-known/appspecific/com.chrome.devtools.json \u001b[33m404\u001b[0m 8.300 ms - 167\u001b[0m","timestamp":"2026-04-12T17:03:55.493Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:04:14.587Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 22.269 ms - 167\u001b[0m","timestamp":"2026-04-12T17:04:14.601Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:06:07.850Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 5.668 ms - 167\u001b[0m","timestamp":"2026-04-12T17:06:07.852Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:06:10.570Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 13.382 ms - 167\u001b[0m","timestamp":"2026-04-12T17:06:10.577Z"}
+{"level":"error","message":"Error: ENOENT: no such file or directory, stat '/home/samsepi0l/horizon/horizon-travel-agency-platform/client/public/index.html'","timestamp":"2026-04-12T17:06:33.103Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 28.848 ms - 167\u001b[0m","timestamp":"2026-04-12T17:06:33.120Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T17:20:00.427Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T17:21:03.989Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 19.249 ms - 139\u001b[0m","timestamp":"2026-04-12T17:21:35.583Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 19.656 ms - 139\u001b[0m","timestamp":"2026-04-12T17:21:39.534Z"}
+{"level":"info","message":"Horizon server running on port 3001 (development)","timestamp":"2026-04-12T17:25:19.614Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 10.290 ms - 54\u001b[0m","timestamp":"2026-04-12T17:25:19.919Z"}
+{"level":"info","message":"Horizon server running on port 3001 (development)","timestamp":"2026-04-12T17:25:45.474Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 13.800 ms - 54\u001b[0m","timestamp":"2026-04-12T17:25:45.895Z"}
+{"level":"info","message":"Horizon server running on port 3001 (development)","timestamp":"2026-04-12T17:33:12.117Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[32m200\u001b[0m 12.979 ms - 421\u001b[0m","timestamp":"2026-04-12T17:33:41.503Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[32m200\u001b[0m 2.177 ms - 2\u001b[0m","timestamp":"2026-04-12T17:33:41.507Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[36m304\u001b[0m 1.472 ms - -\u001b[0m","timestamp":"2026-04-12T17:33:41.512Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[36m304\u001b[0m 3.014 ms - -\u001b[0m","timestamp":"2026-04-12T17:33:41.518Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[32m200\u001b[0m 172.397 ms - 83\u001b[0m","timestamp":"2026-04-12T17:34:31.839Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[32m200\u001b[0m 8.321 ms - 2\u001b[0m","timestamp":"2026-04-12T17:34:48.776Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/gallery \u001b[32m200\u001b[0m 8.344 ms - 2\u001b[0m","timestamp":"2026-04-12T17:34:54.499Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/admin/offer \u001b[36m304\u001b[0m 5.458 ms - -\u001b[0m","timestamp":"2026-04-12T17:45:55.706Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.668 ms - 54\u001b[0m","timestamp":"2026-04-12T18:17:47.282Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[36m304\u001b[0m 1.947 ms - -\u001b[0m","timestamp":"2026-04-12T18:45:55.500Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[36m304\u001b[0m 1.807 ms - -\u001b[0m","timestamp":"2026-04-12T18:45:55.504Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/offer \u001b[36m304\u001b[0m 1.407 ms - -\u001b[0m","timestamp":"2026-04-12T18:45:55.512Z"}
+{"level":"info","message":"\u001b[0mGET /api/content/1/gallery \u001b[36m304\u001b[0m 1.547 ms - -\u001b[0m","timestamp":"2026-04-12T18:45:55.516Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 1.528 ms - 54\u001b[0m","timestamp":"2026-04-12T19:15:07.807Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/super/login \u001b[33m401\u001b[0m 1.622 ms - 54\u001b[0m","timestamp":"2026-04-12T19:15:07.841Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/super/login \u001b[33m401\u001b[0m 2.613 ms - 54\u001b[0m","timestamp":"2026-04-12T19:17:57.486Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/super/login \u001b[33m401\u001b[0m 1.263 ms - 54\u001b[0m","timestamp":"2026-04-12T19:20:35.334Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/super/login \u001b[33m401\u001b[0m 1.476 ms - 54\u001b[0m","timestamp":"2026-04-12T19:23:50.913Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-12T19:28:16.398Z"}
+{"level":"info","message":"\u001b[0mGET /installments-simulator \u001b[33m401\u001b[0m 84.193 ms - 61\u001b[0m","timestamp":"2026-04-12T19:28:25.293Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 14.869 ms - 54\u001b[0m","timestamp":"2026-04-12T19:28:27.233Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 5.893 ms - 54\u001b[0m","timestamp":"2026-04-12T19:28:28.563Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 3.203 ms - 54\u001b[0m","timestamp":"2026-04-12T19:28:28.758Z"}
+{"level":"info","message":"\u001b[0mGET / \u001b[33m401\u001b[0m 4.230 ms - 54\u001b[0m","timestamp":"2026-04-12T19:28:28.972Z"}
+{"level":"info","message":"SIGINT received, closing server...","timestamp":"2026-04-12T19:29:51.208Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-13T08:58:20.275Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 4.897 ms - 54\u001b[0m","timestamp":"2026-04-13T08:58:24.380Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-13T09:05:19.921Z"}
+{"level":"info","message":"\u001b[0mGET /health \u001b[32m200\u001b[0m 4.879 ms - 54\u001b[0m","timestamp":"2026-04-13T09:05:22.284Z"}
+{"level":"info","message":"Horizon server running on port 3000 (development)","timestamp":"2026-04-13T09:12:24.160Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 130.591 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:41.730Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/clients?agency_id=999 \u001b[33m401\u001b[0m 1.521 ms - 54\u001b[0m","timestamp":"2026-04-13T09:13:41.744Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 18.667 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.618Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 5.554 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.651Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.324 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.669Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.811 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.683Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.596 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.697Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.362 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.710Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.277 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.722Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 2.762 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.737Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m401\u001b[0m 1.152 ms - 31\u001b[0m","timestamp":"2026-04-13T09:13:48.749Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.950 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.762Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 1.103 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.773Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.876 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.785Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.663 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.798Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.774 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.811Z"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/auth/login \u001b[33m429\u001b[0m 0.826 ms - 42\u001b[0m","timestamp":"2026-04-13T09:13:48.822Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/super/agencies \u001b[33m401\u001b[0m 18.868 ms - 24\u001b[0m","timestamp":"2026-04-13T09:15:33.316Z"}

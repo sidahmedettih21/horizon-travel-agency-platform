@@ -64,7 +64,11 @@ router.put('/:id', authorize('owner', 'staff'), [
 ], async (req, res) => {
   const agencyId = req.agency.id;
   const clientId = req.params.id;
-  const updates = { ...req.body };
+  const allowedFields = ['name', 'phone', 'email', 'passport_number', 'passport_expiry', 'wilaya', 'notes'];
+  const updates = {};
+allowedFields.forEach(field => {
+  if (req.body[field] !== undefined) updates[field] = req.body[field];
+});
 
   if (updates.passport_number !== undefined) updates.passport_number = JSON.stringify(encrypt(updates.passport_number));
   if (updates.passport_expiry !== undefined) updates.passport_expiry = JSON.stringify(encrypt(updates.passport_expiry));

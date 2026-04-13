@@ -33,6 +33,7 @@ function distributePayment(requiredMonthly, contributors, method = 'proportional
   if (remaining > 0.01) {
     distributions.sort((a, b) => {
       const capA = contributors.find(c => c.name === a.name).salary * 0.3;
+      const capB = contributors.find(c => c.name === b.name).salary * 0.3;
       return (capA - a.amount) - (capB - b.amount);
     });
     for (let d of distributions) {

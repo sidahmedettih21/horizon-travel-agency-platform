@@ -45,9 +45,17 @@ router.post('/scan', authorize('trainee', 'staff', 'owner'), [
     return res.status(400).json({ error: 'Outside attendance window', message: `Only between ${windowStart}:00 and ${windowEnd}:00` });
   }
 
-  const allowed = (process.env.ALLOWED_QR_IPS || '').split(',');
+  const allowed = (process.env.ALLOWED_QR_IPS || '').split(',').map(s => s.trim());
   const clientIP = req.ip || req.connection.remoteAddress;
-  const ipOk = allowed.some(range => clientIP.includes(range.trim().replace(/\/\d+$/, '')));
+  // Simple exact-match or prefix-match (e.g., "192.168.1." matches all in that subnet)
+  const ipOk = allowed.some(range => {
+    if (range.includes('/')) {
+      // For now, just strip the CIDR and do prefix match
+  const base = range.split('/')[0];
+      return clientIP.startsWith(base);
+    }
+    return clientIP === range || clientIP.startsWith(range);
+  });
   if (!ipOk) {
     return res.status(403).json({ error: 'IP not allowed for attendance' });
   }
