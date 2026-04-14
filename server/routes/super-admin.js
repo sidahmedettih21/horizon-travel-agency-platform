@@ -10,6 +10,7 @@ function superAuth(req, res, next) {
   if (!token) return res.status(401).json({ error: 'Unauthorized' });
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS512'] });
+if (decoded.role !== 'super_admin') return res.status(403).json({ error: 'Forbidden' });
     req.superAdmin = decoded;
     next();
   } catch {
