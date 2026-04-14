@@ -7,9 +7,14 @@ const logger = require('../utils/logger');
 
 router.get('/', authorize('owner', 'staff'), async (req, res) => {
   const agencyId = req.agency.id;
+  const limit = Math.min(parseInt(req.query.limit) || 50, 200);
+  const offset = parseInt(req.query.offset) || 0;
   try {
-    const tx = db.prepare(`SELECT * FROM transactions WHERE agency_id = ?`).all(agencyId);
-    res.json(tx);
+    const total = db.prepare('SELECT COUNT(*) as count FROM transactions WHERE agency_id = ?').get(agencyId).count;
+    const transactions = db.prepare(`
+      SELECT * FROM transactions WHERE agency_id = ? ORDER BY created_at DESC LIMIT ? OFFSET ?
+    `).all(agencyId, limit, offset);
+    res.json({ data: transactions, pagination: { total, limit, offset } });
   } catch (err) {
     logger.error(`Transactions list error: ${err.message}`);
     res.status(500).json({ error: 'Internal server error' });

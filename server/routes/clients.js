@@ -8,18 +8,15 @@ const { encrypt, decrypt } = require('../utils/encryption');
 
 router.get('/', authorize('owner', 'staff'), async (req, res) => {
   const agencyId = req.agency.id;
+  const limit = Math.min(parseInt(req.query.limit) || 50, 200);
+  const offset = parseInt(req.query.offset) || 0;
   try {
-    const clients = db.prepare(`SELECT * FROM clients WHERE agency_id = ?`).all(agencyId);
-    const decryptedClients = clients.map(client => {
-      if (client.passport_number) {
-        try { client.passport_number = decrypt(JSON.parse(client.passport_number)); } catch (e) { client.passport_number = '[ENCRYPTED]'; }
-      }
-      if (client.passport_expiry) {
-        try { client.passport_expiry = decrypt(JSON.parse(client.passport_expiry)); } catch (e) { client.passport_expiry = '[ENCRYPTED]'; }
-      }
-      return client;
-    });
-    res.json(decryptedClients);
+    const total = db.prepare('SELECT COUNT(*) as count FROM clients WHERE agency_id = ?').get(agencyId).count;
+    const clients = db.prepare(`
+      SELECT id, uuid, name, phone, email, wilaya, notes, created_at, updated_at
+      FROM clients WHERE agency_id = ? ORDER BY created_at DESC LIMIT ? OFFSET ?
+    `).all(agencyId, limit, offset);
+    res.json({ data: clients, pagination: { total, limit, offset } });
   } catch (err) {
     logger.error(`Clients list error: ${err.message}`);
     res.status(500).json({ error: 'Internal server error' });

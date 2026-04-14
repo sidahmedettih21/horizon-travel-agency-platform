@@ -74,9 +74,17 @@ router.post('/scan', authorize('trainee', 'staff', 'owner'), [
 
 router.get('/', authorize('owner', 'staff'), async (req, res) => {
   const agencyId = req.agency.id;
+  const limit = Math.min(parseInt(req.query.limit) || 50, 200);
+  const offset = parseInt(req.query.offset) || 0;
   try {
-    const records = db.prepare(`SELECT * FROM attendance WHERE agency_id = ?`).all(agencyId);
-    res.json(records);
+    const total = db.prepare('SELECT COUNT(*) as count FROM attendance WHERE agency_id = ?').get(agencyId).count;
+    const records = db.prepare(`
+      SELECT a.*, u.first_name, u.last_name
+      FROM attendance a
+      LEFT JOIN users u ON a.user_id = u.id
+      WHERE a.agency_id = ? ORDER BY a.date DESC LIMIT ? OFFSET ?
+    `).all(agencyId, limit, offset);
+    res.json({ data: records, pagination: { total, limit, offset } });
   } catch (err) {
     logger.error(`Attendance list error: ${err.message}`);
     res.status(500).json({ error: 'Internal server error' });

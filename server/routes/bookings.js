@@ -7,9 +7,18 @@ const logger = require('../utils/logger');
 
 router.get('/', authorize('owner', 'staff'), async (req, res) => {
   const agencyId = req.agency.id;
+  const limit = Math.min(parseInt(req.query.limit) || 50, 200);
+  const offset = parseInt(req.query.offset) || 0;
   try {
-    const bookings = db.prepare(`SELECT * FROM bookings WHERE agency_id = ?`).all(agencyId);
-    res.json(bookings);
+    const total = db.prepare('SELECT COUNT(*) as count FROM bookings WHERE agency_id = ?').get(agencyId).count;
+    const bookings = db.prepare(`
+      SELECT b.*, c.name as client_name, c.phone as client_phone
+      FROM bookings b
+      LEFT JOIN clients c ON b.client_id = c.id
+      WHERE b.agency_id = ?
+      ORDER BY b.created_at DESC LIMIT ? OFFSET ?
+    `).all(agencyId, limit, offset);
+    res.json({ data: bookings, pagination: { total, limit, offset } });
   } catch (err) {
     logger.error(`Bookings list error: ${err.message}`);
     res.status(500).json({ error: 'Internal server error' });
