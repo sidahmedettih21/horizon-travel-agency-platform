@@ -54,7 +54,7 @@ app.use('/api/v1/auth', require('./routes/auth'));
 app.use('/api/content', require('./routes/content'));
 app.use('/api/v1/installments', require('./routes/installments'));
 app.use('/api/v1/super', require('./routes/super-admin'));
-
+app.use('/api/v1/dashboard', require('./routes/dashboard'));
 app.use(authenticateMiddleware);
 app.use('/api/v1/leads', require('./routes/leads'));
 app.use('/api/v1/clients', require('./routes/clients'));
@@ -62,8 +62,10 @@ app.use('/api/v1/bookings', require('./routes/bookings'));
 app.use('/api/v1/transactions', require('./routes/transactions'));
 app.use('/api/v1/attendance', require('./routes/attendance'));
 app.use('/api/v1/agency', require('./routes/agency'));
+app.use('/api/v1/upload', require('./routes/upload'));
 app.use('/api/v1/notifications', require('./routes/notifications'));
 app.use('/api/v1/reminders', require('./routes/reminders'));
+app.use('/api/v1/staff', require('./routes/staff'));
 
 app.use((err, req, res, next) => {
   logger.error(err.stack);

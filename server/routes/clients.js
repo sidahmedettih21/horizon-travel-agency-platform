@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { body, param, validationResult } = require('express-validator');
 const db = require('../database/connection');
+const authenticate = require('../middleware/authenticate');
 const authorize = require('../middleware/authorize');
 const logger = require('../utils/logger');
 const { encrypt, decrypt } = require('../utils/encryption');
@@ -22,7 +23,13 @@ router.get('/', authorize('owner', 'staff'), async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
+router.delete('/:id', authorize('owner', 'staff'), (req, res) => {
+  const { id } = req.params;
+  const stmt = db.prepare('DELETE FROM clients WHERE uuid = ? AND agency_id = ?');
+  const info = stmt.run(id, req.agency.id);
+  if (info.changes === 0) return res.status(404).json({ error: 'Client not found' });
+  res.json({ success: true });
+});
 router.post('/', authorize('owner', 'staff'), [
   body('name').trim().notEmpty(),
   body('phone').trim().notEmpty(),
