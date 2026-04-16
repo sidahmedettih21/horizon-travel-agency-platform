@@ -1,33 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const { param } = require('express-validator');
 const db = require('../database/connection');
-const authorize = require('../middleware/authorize');
-const logger = require('../utils/logger');
+const authenticate = require('../middleware/authenticate');
 
-router.get('/', authorize('owner', 'staff', 'trainee'), async (req, res) => {
-  const agencyId = req.agency.id;
+router.get('/', authenticate, (req, res) => {
   try {
-    const reminders = db.prepare(`SELECT * FROM reminders WHERE agency_id = ? AND staff_id = ?`).all(agencyId, req.user.id);
+    const reminders = db.prepare(`
+      SELECT * FROM reminders WHERE agency_id = ? AND (staff_id = ? OR staff_id IS NULL)
+      ORDER BY due_at ASC
+    `).all(req.agency.id, req.user.id);
     res.json(reminders);
-  } catch (err) {
-    logger.error(`Reminders list error: ${err.message}`);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+  } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-router.put('/:id/done', authorize('owner', 'staff', 'trainee'), [
-  param('id').isInt()
-], async (req, res) => {
-  const agencyId = req.agency.id;
-  const id = req.params.id;
+router.post('/', authenticate, (req, res) => {
+  const { title, due_at, staff_id } = req.body;
+  if (!title || !due_at) return res.status(400).json({ error: 'Missing fields' });
   try {
-    db.prepare(`UPDATE reminders SET is_done = 1 WHERE id = ? AND agency_id = ? AND staff_id = ?`).run(id, agencyId, req.user.id);
-    res.json({ message: 'Reminder marked done' });
-  } catch (err) {
-    logger.error(`Mark done error: ${err.message}`);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+    const stmt = db.prepare(`
+      INSERT INTO reminders (agency_id, staff_id, title, due_at)
+      VALUES (?, ?, ?, ?)
+    `);
+    const info = stmt.run(req.agency.id, staff_id || req.user.id, title, due_at);
+    res.status(201).json({ id: info.lastInsertRowid });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+router.put('/:id/done', authenticate, (req, res) => {
+  const { id } = req.params;
+  const stmt = db.prepare('UPDATE reminders SET is_done = 1 WHERE id = ? AND agency_id = ?');
+  const info = stmt.run(id, req.agency.id);
+  if (info.changes === 0) return res.status(404).json({ error: 'Not found' });
+  res.json({ success: true });
 });
 
 module.exports = router;

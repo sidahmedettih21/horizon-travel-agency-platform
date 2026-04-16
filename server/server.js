@@ -66,6 +66,10 @@ app.use('/api/v1/upload', require('./routes/upload'));
 app.use('/api/v1/notifications', require('./routes/notifications'));
 app.use('/api/v1/reminders', require('./routes/reminders'));
 app.use('/api/v1/staff', require('./routes/staff'));
+app.use('/api/v1/attendance', require('./routes/attendance'));
+app.use('/api/v1/reminders', require('./routes/reminders'));
+app.use('/api/v1/staff', require('./routes/staff'));
+app.use('/api/v1/agency', require('./routes/agency'));
 
 app.use((err, req, res, next) => {
   logger.error(err.stack);
