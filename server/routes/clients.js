@@ -7,7 +7,8 @@ const authorize = require('../middleware/authorize');
 const logger = require('../utils/logger');
 const { encrypt, decrypt } = require('../utils/encryption');
 
-router.get('/', authorize('owner', 'staff'), async (req, res) => {
+// GET /api/v1/clients (paginated)
+router.get('/', authenticate, authorize('owner', 'staff'), (req, res) => {
   const agencyId = req.agency.id;
   const limit = Math.min(parseInt(req.query.limit) || 50, 200);
   const offset = parseInt(req.query.offset) || 0;
@@ -23,14 +24,16 @@ router.get('/', authorize('owner', 'staff'), async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-router.delete('/:id', authorize('owner', 'staff'), (req, res) => {
-  const { id } = req.params;
-  const stmt = db.prepare('DELETE FROM clients WHERE uuid = ? AND agency_id = ?');
-  const info = stmt.run(id, req.agency.id);
-  if (info.changes === 0) return res.status(404).json({ error: 'Client not found' });
-  res.json({ success: true });
+
+// GET /api/v1/clients/:uuid
+router.get('/:uuid', authenticate, authorize('owner', 'staff'), (req, res) => {
+  const client = db.prepare('SELECT * FROM clients WHERE uuid = ? AND agency_id = ?').get(req.params.uuid, req.agency.id);
+  if (!client) return res.status(404).json({ error: 'Client not found' });
+  res.json(client);
 });
-router.post('/', authorize('owner', 'staff'), [
+
+// POST /api/v1/clients
+router.post('/', authenticate, authorize('owner', 'staff'), [
   body('name').trim().notEmpty(),
   body('phone').trim().notEmpty(),
   body('email').optional().isEmail(),
@@ -63,16 +66,13 @@ router.post('/', authorize('owner', 'staff'), [
   }
 });
 
-router.put('/:id', authorize('owner', 'staff'), [
-  param('id').isInt()
-], async (req, res) => {
+// PUT /api/v1/clients/:id
+router.put('/:id', authenticate, authorize('owner', 'staff'), [param('id').isInt()], async (req, res) => {
   const agencyId = req.agency.id;
   const clientId = req.params.id;
   const allowedFields = ['name', 'phone', 'email', 'passport_number', 'passport_expiry', 'wilaya', 'notes'];
   const updates = {};
-allowedFields.forEach(field => {
-  if (req.body[field] !== undefined) updates[field] = req.body[field];
-});
+  allowedFields.forEach(field => { if (req.body[field] !== undefined) updates[field] = req.body[field]; });
 
   if (updates.passport_number !== undefined) updates.passport_number = JSON.stringify(encrypt(updates.passport_number));
   if (updates.passport_expiry !== undefined) updates.passport_expiry = JSON.stringify(encrypt(updates.passport_expiry));
@@ -97,24 +97,12 @@ allowedFields.forEach(field => {
   }
 });
 
-router.get('/:id/bookings', authorize('owner', 'staff'), async (req, res) => {
-  const agencyId = req.agency.id;
-  const clientId = req.params.id;
-  try {
-    const bookings = db.prepare(`
-      SELECT b.*, c.passport_number, c.passport_expiry 
-      FROM bookings b JOIN clients c ON b.client_id = c.id 
-      WHERE b.agency_id = ? AND b.client_id = ?
-    `).all(agencyId, clientId);
-    bookings.forEach(b => {
-      if (b.passport_number) try { b.passport_number = decrypt(JSON.parse(b.passport_number)); } catch (e) {}
-      if (b.passport_expiry) try { b.passport_expiry = decrypt(JSON.parse(b.passport_expiry)); } catch (e) {}
-    });
-    res.json(bookings);
-  } catch (err) {
-    logger.error(`Client bookings error: ${err.message}`);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+// DELETE /api/v1/clients/:uuid
+router.delete('/:uuid', authenticate, authorize('owner', 'staff'), (req, res) => {
+  const stmt = db.prepare('DELETE FROM clients WHERE uuid = ? AND agency_id = ?');
+  const info = stmt.run(req.params.uuid, req.agency.id);
+  if (info.changes === 0) return res.status(404).json({ error: 'Client not found' });
+  res.json({ success: true });
 });
 
 module.exports = router;

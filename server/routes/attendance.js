@@ -37,5 +37,11 @@ router.post('/manual', authenticate, authorize('owner', 'staff'), (req, res) => 
     res.json({ success: true });
   } catch (err) { res.status(500).json({ error: err.message }); }
 });
-
+function ipInRange(ip, cidr) {
+  const [range, bits] = cidr.split('/');
+  const mask = ~((1 << (32 - bits)) - 1);
+  const ipNum = ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
+  const rangeNum = range.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
+  return (ipNum & mask) === (rangeNum & mask);
+}
 module.exports = router;
